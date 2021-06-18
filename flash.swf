@@ -1,0 +1,9 @@
+var Fei_xml:XML = new XML(); //创建xml对象
+
+Fei_xml.ignoreWhite = true;  //
+
+Fei_xml.onLoad = function(){
+
+getURL(Fei_xml.childNodes[0].childNodes[0].childNodes[0].nodeValue)} //获取值
+
+Fei_xml.load(_root.xss);  //加载XML文档
