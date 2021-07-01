@@ -147,6 +147,7 @@ Information Disclosure - PHP version,information_disclosure_1.php
 Information Disclosure - Robots File,information_disclosure_3.php
 Insecure iFrame (Login Form),insecure_iframe.php
 Unrestricted File Upload,unrestricted_file_upload.php
+A10 apache log,A10.php
 ---------------------------  Extras  --------------------------,portal.php
 A.I.M. - No-authentication Mode,aim.php
 Client Access Policy File,../ClientAccessPolicy.xml
@@ -193,7 +194,7 @@ xx型注入,vul/sqli/sqli_x.php
 盲注(base on time),vul/sqli/sqli_blind_t.php
 宽字节注入,vul/sqli/sqli_widebyte.php
 
-</RCE>
+/RCE>
 exec"ping",vul/rce/rce_ping.php
 exec"evel",vul/rce/rce_eval.php
 
@@ -231,3 +232,10 @@ xxe,vul/xxe/xxe_1.php
 /SSRF
 ssrf(curl),vul/ssrf/ssrf_curl.php
 ssrf(file_get_content),vul/ssrf/ssrf_fgc.php
+
+Null Byte Injection,nullbyte1.php?file=1
+Auto-complete Not Disabled On Password Parameters,Auto_complete_Not_Disableds.php
+会话劫持,sessionID.php
+'跨站Flash攻击,XSF.html
+Insufficient Anti-Automation,Insufficient%20Anti-automation.php?id=0
+
