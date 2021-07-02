@@ -130,40 +130,40 @@ else
     
 }
 
-$file = "/var/log/apache2/access.log";
+
 $directory_traversal_error = "";  
 
-function show_log($file)
-{
-    
-    // Checks whether a file or directory exists    
-    // if(file_exists($file))
-    if(is_file($file)) 
-    {
-        echo("Apache log:</br>";           
-        $fp = fopen($file, "r") or die("Couldn't open $file.");
-        $i=0;
-        while($i<20)
-        {
-
-            $line = fgets($fp,1024);
-            echo($line);
-            echo "<br />";
-            $i++;
+function readBySeek($filepath,$lines,$revers = false){
+        $offset = -1;
+        $c = '';
+        $read = '';
+        $i = 0;
+        $fp = fopen($filepath, "r");
+        while( $lines && fseek($fp, $offset, SEEK_END) >= 0 ) {
+            $c = fgetc($fp);
+            if($c == "\n" || $c == "\r"){
+                $lines--;
+                if( $revers ){
+                    $read[$i] = strrev($read[$i]);
+                    $i++;
+                }
+            }
+            if( $revers ) $read[$i] .= $c;
+            else $read .= $c;
+            $offset--;
         }
-        
-    }   
-        
-    else
-    {
-        
-        echo "This file doesn't exist!";
-       
-    }          
-            
-}
+        fclose($fp);
+        if( $revers ){
+            if($read[$i] == "\n" || $read[$i] == "\r")
+                array_pop($read);
+            else $read[$i] = strrev($read[$i]); //反转字符串
+            return implode('',$read);
+        }
+        return strrev(rtrim($read,"\n\r"));
+        }
 
-show_log($file);
+
+
 
 ?>
 <!DOCTYPE html>
@@ -220,9 +220,11 @@ show_log($file);
     
     <h1>A10 apache log</h1>
 
-    <?php       
+    <?php      
+                $file = "/var/log/apache2/access.log"; 
+                //$file = "1.txt";
                 header("refresh: 3"); 
-                show_file($file);
+                echo(readBySeek($file,6,false));
 
     ?>
 
@@ -298,7 +300,7 @@ foreach ($bugs as $key => $value)
 
 ?>
 
-
+<form>
         </select>
         
         <button type="submit" name="form_bug" value="submit">Hack</button>
@@ -308,5 +310,4 @@ foreach ($bugs as $key => $value)
 </div>
       
 </body>
-    
 </html>
