@@ -29,6 +29,16 @@ SQL Injection - Blind - Boolean-Based,sqli_4.php
 SQL Injection - Blind - Time-Based,sqli_15.php
 SQL Injection - Blind (SQLite),sqli_14.php
 SQL Injection - Blind (Web Services/SOAP),sqli_5.php
+数字型注入,vul/sqli/sqli_id.php
+字符型注入,vul/sqli/sqli_str.php
+搜索型注入,vul/sqli/sqli_search.php
+xx型注入,vul/sqli/sqli_x.php
+"insert/update"注入,vul/sqli/sqli_iu/sqli_login.php
+"delete"注入,vul/sqli/sqli_del.php
+"http header"注入,vul/sqli/sqli_header/sqli_header_login.php
+盲注(base on boolian),vul/sqli/sqli_blind_b.php
+盲注(base on time),vul/sqli/sqli_blind_t.php
+宽字节注入,vul/sqli/sqli_widebyte.php
 XML/XPath Injection (Login Form),xmli_1.php
 XML/XPath Injection (Search),xmli_2.php
 /,portal.php
@@ -45,7 +55,56 @@ Session Management - Cookies (Secure),smgmt_cookies_secure.php
 Session Management - Session ID in URL,smgmt_sessionid_url.php
 Session Management - Strong Sessions,smgmt_strong_sessions.php
 /,portal.php
-/ A3 - Cross-Site Scripting (XSS) /,portal.php
+/ A3 - Sensitive Data Exposure /,portal.php
+Base64 Encoding (Secret),insecure_crypt_storage_3.php
+BEAST/CRIME/BREACH Attacks,insuff_transp_layer_protect_3.php
+Clear Text HTTP (Credentials),insuff_transp_layer_protect_1.php
+Heartbleed Vulnerability,heartbleed.php
+Host Header Attack (Reset Poisoning),hostheader_2.php
+HTML5 Web Storage (Secret),insecure_crypt_storage_1.php
+POODLE Vulnerability,insuff_transp_layer_protect_4.php
+SSL 2.0 Deprecated Protocol,insuff_transp_layer_protect_2.php
+Text Files (Accounts),insecure_crypt_storage_2.php
+敏感信息pikachu,vul/infoleak/findabc.php
+/,portal.php
+/A4 - XML External Entities (XXE)
+xxe,vul/xxe/xxe_1.php
+XML External Entity Attacks (XXE),xxe-1.php
+/,portal.php
+/ A5 - Broken Access Control /,portal.php
+Directory Traversal - Directories,directory_traversal_2.php?directory=documents
+Directory Traversal - Files,directory_traversal_1.php?page=message.txt
+Host Header Attack (Cache Poisoning),hostheader_1.php
+Host Header Attack (Reset Poisoning),hostheader_2.php
+Local File Inclusion (SQLiteManager),lfi_sqlitemanager.php
+Remote & Local File Inclusion (RFI/LFI),rlfi.php
+Restrict Device Access,restrict_device_access.php
+Restrict Folder Access,restrict_folder_access.php
+Server Side Request Forgery (SSRF),ssrf.php
+Insecure DOR (Change Secret),insecure_direct_object_ref_1.php
+Insecure DOR (Reset Secret),insecure_direct_object_ref_3.php
+Insecure DOR (Order Tickets),insecure_direct_object_ref_2.php
+/,portal.php
+/ A6 - Security Misconfiguration /,portal.php
+Arbitrary File Access (Samba),sm_samba.php
+Cross-Domain Policy File (Flash),sm_cross_domain_policy.php
+Cross-Origin Resource Sharing (AJAX),sm_cors.php
+Cross-Site Tracing (XST),sm_xst.php
+Denial-of-Service (Large Chunk Size),sm_dos_3.php
+Denial-of-Service (Slow HTTP DoS),sm_dos_1.php
+Denial-of-Service (SSL-Exhaustion),sm_dos_4.php
+Denial-of-Service (XML Bomb),sm_dos_2.php
+Insecure FTP Configuration,sm_ftp.php
+Insecure SNMP Configuration,sm_snmp.php
+Insecure WebDAV Configuration,sm_webdav.php
+Local Privilege Escalation (sendpage),sm_local_priv_esc_1.php
+Local Privilege Escalation (udev),sm_local_priv_esc_2.php
+Man-in-the-Middle Attack (HTTP),sm_mitm_1.php
+Man-in-the-Middle Attack (SMTP),sm_mitm_2.php
+Old/Backup & Unreferenced Files,sm_obu_files.php
+Robots File,sm_robots.php
+/,portal.php
+/ A7 - Cross-Site Scripting (XSS) /,portal.php
 Cross-Site Scripting - Reflected (GET),xss_get.php
 Cross-Site Scripting - Reflected (POST),xss_post.php
 Cross-Site Scripting - Reflected (JSON),xss_json.php
@@ -65,58 +124,19 @@ Cross-Site Scripting - Stored (Change Secret),xss_stored_3.php
 Cross-Site Scripting - Stored (Cookies),xss_stored_2.php
 Cross-Site Scripting - Stored (SQLiteManager),xss_sqlitemanager.php
 Cross-Site Scripting - Stored (User-Agent),xss_stored_4.php
+反射型xss(get),vul/xss/xss_reflected_get.php
+反射式xss(post),vul/xss/xsspost/post_login.php
+存储型xss,vul/xss/xss_stored.php
+DOM型xss,vul/xss/xss_dom.php
+DOM型xss-x,vul/xss/xss_dom_x.php
+xss之盲打,vul/xss/xssblind/xss_blind.php
+xss之过滤,vul/xss/xss_01.php
+xss之htmlspecialchars,vul/xss/xss_02.php
+xss之herf输出,vul/xss/xss_03.php
+xss之js输出,vul/xss/xss_04.php
 /,portal.php
-/ A4 - Insecure Direct Object References /,portal.php
-Insecure DOR (Change Secret),insecure_direct_object_ref_1.php
-Insecure DOR (Reset Secret),insecure_direct_object_ref_3.php
-Insecure DOR (Order Tickets),insecure_direct_object_ref_2.php
-/,portal.php
-/ A5 - Security Misconfiguration /,portal.php
-Arbitrary File Access (Samba),sm_samba.php
-Cross-Domain Policy File (Flash),sm_cross_domain_policy.php
-Cross-Origin Resource Sharing (AJAX),sm_cors.php
-Cross-Site Tracing (XST),sm_xst.php
-Denial-of-Service (Large Chunk Size),sm_dos_3.php
-Denial-of-Service (Slow HTTP DoS),sm_dos_1.php
-Denial-of-Service (SSL-Exhaustion),sm_dos_4.php
-Denial-of-Service (XML Bomb),sm_dos_2.php
-Insecure FTP Configuration,sm_ftp.php
-Insecure SNMP Configuration,sm_snmp.php
-Insecure WebDAV Configuration,sm_webdav.php
-Local Privilege Escalation (sendpage),sm_local_priv_esc_1.php
-Local Privilege Escalation (udev),sm_local_priv_esc_2.php
-Man-in-the-Middle Attack (HTTP),sm_mitm_1.php
-Man-in-the-Middle Attack (SMTP),sm_mitm_2.php
-Old/Backup & Unreferenced Files,sm_obu_files.php
-Robots File,sm_robots.php
-/,portal.php
-/ A6 - Sensitive Data Exposure /,portal.php
-Base64 Encoding (Secret),insecure_crypt_storage_3.php
-BEAST/CRIME/BREACH Attacks,insuff_transp_layer_protect_3.php
-Clear Text HTTP (Credentials),insuff_transp_layer_protect_1.php
-Heartbleed Vulnerability,heartbleed.php
-Host Header Attack (Reset Poisoning),hostheader_2.php
-HTML5 Web Storage (Secret),insecure_crypt_storage_1.php
-POODLE Vulnerability,insuff_transp_layer_protect_4.php
-SSL 2.0 Deprecated Protocol,insuff_transp_layer_protect_2.php
-Text Files (Accounts),insecure_crypt_storage_2.php
-/,portal.php
-/ A7 - Missing Functional Level Access Control /,portal.php
-Directory Traversal - Directories,directory_traversal_2.php?directory=documents
-Directory Traversal - Files,directory_traversal_1.php?page=message.txt
-Host Header Attack (Cache Poisoning),hostheader_1.php
-Host Header Attack (Reset Poisoning),hostheader_2.php
-Local File Inclusion (SQLiteManager),lfi_sqlitemanager.php
-Remote & Local File Inclusion (RFI/LFI),rlfi.php
-Restrict Device Access,restrict_device_access.php
-Restrict Folder Access,restrict_folder_access.php
-Server Side Request Forgery (SSRF),ssrf.php
-XML External Entity Attacks (XXE),xxe-1.php
-/,portal.php
-/ A8 - Cross-Site Request Forgery (CSRF) /,portal.php
-Cross-Site Request Forgery (Change Password),csrf_1.php
-Cross-Site Request Forgery (Change Secret),csrf_3.php
-Cross-Site Request Forgery (Transfer Amount),csrf_2.php
+/A8 Insecure Deserialization
+php反序列化,vul/unserilization/unser.php
 /,portal.php
 / A9 - Using Known Vulnerable Components /,portal.php
 Buffer Overflow (Local),bof_1.php
@@ -131,10 +151,8 @@ SQLiteManager Local File Inclusion,lfi_sqlitemanager.php
 SQLiteManager PHP Code Injection,phpi_sqlitemanager.php
 SQLiteManager XSS,xss_sqlitemanager.php
 /,portal.php
-/ A10 - Unvalidated Redirects & Forwards /,portal.php
-Unvalidated Redirects & Forwards (1),unvalidated_redir_fwd_1.php
-Unvalidated Redirects & Forwards (2),unvalidated_redir_fwd_2.php
-/,portal.php
+/ A10 -Insufficient Logging & Monitoring
+A10 apache log,A10.php
 / Other bugs... /,portal.php
 ClickJacking (Movie Tickets),clickjacking.php
 Client-Side Validation (Password),cs_validation.php
@@ -147,7 +165,18 @@ Information Disclosure - PHP version,information_disclosure_1.php
 Information Disclosure - Robots File,information_disclosure_3.php
 Insecure iFrame (Login Form),insecure_iframe.php
 Unrestricted File Upload,unrestricted_file_upload.php
-A10 apache log,A10.php
+/ A8 - Cross-Site Request Forgery (CSRF) /,portal.php
+Cross-Site Request Forgery (Change Password),csrf_1.php
+Cross-Site Request Forgery (Change Secret),csrf_3.php
+Cross-Site Request Forgery (Transfer Amount),csrf_2.php
+CSRF(get) login,vul/csrf/csrfget/csrf_get_login.php
+CSRF(post) login,vul/csrf/csrfpost/csrf_post_login.php
+CSRF Token login,vul/csrf/csrftoken/token_get_login.php
+/,portal.php
+/ A10(owasp2013) - Unvalidated Redirects & Forwards /,portal.php
+Unvalidated Redirects & Forwards (1),unvalidated_redir_fwd_1.php
+Unvalidated Redirects & Forwards (2),unvalidated_redir_fwd_2.php
+/,portal.php
 ---------------------------  Extras  --------------------------,portal.php
 A.I.M. - No-authentication Mode,aim.php
 Client Access Policy File,../ClientAccessPolicy.xml
@@ -164,35 +193,6 @@ WSDL File (Web Services/SOAP),ws_soap.php
 验证码绕过(on server),vul/burteforce/bf_server.php
 验证码绕过(on client),vul/burteforce/bf_client.php
 token防爆破,vul/burteforce/bf_token.php
-
-/XSS>
-反射型xss(get),vul/xss/xss_reflected_get.php
-反射式xss(post),vul/xss/xsspost/post_login.php
-存储型xss,vul/xss/xss_stored.php
-DOM型xss,vul/xss/xss_dom.php
-DOM型xss-x,vul/xss/xss_dom_x.php
-xss之盲打,vul/xss/xssblind/xss_blind.php
-xss之过滤,vul/xss/xss_01.php
-xss之htmlspecialchars,vul/xss/xss_02.php
-xss之herf输出,vul/xss/xss_03.php
-xss之js输出,vul/xss/xss_04.php
-
-/CSRF>
-CSRF(get) login,vul/csrf/csrfget/csrf_get_login.php
-CSRF(post) login,vul/csrf/csrfpost/csrf_post_login.php
-CSRF Token login,vul/csrf/csrftoken/token_get_login.php
-
-/SQL-Inject>
-数字型注入,vul/sqli/sqli_id.php
-字符型注入,vul/sqli/sqli_str.php
-搜索型注入,vul/sqli/sqli_search.php
-xx型注入,vul/sqli/sqli_x.php
-"insert/update"注入,vul/sqli/sqli_iu/sqli_login.php
-"delete"注入,vul/sqli/sqli_del.php
-"http header"注入,vul/sqli/sqli_header/sqli_header_login.php
-盲注(base on boolian),vul/sqli/sqli_blind_b.php
-盲注(base on time),vul/sqli/sqli_blind_t.php
-宽字节注入,vul/sqli/sqli_widebyte.php
 
 /RCE>
 exec"ping",vul/rce/rce_ping.php
@@ -214,18 +214,7 @@ getimagesize(),vul/unsafeupload/getimagesize.php
 水平越权,vul/overpermission/op1/op1_login.php
 垂直越权,vul/overpermission/op2/op2_login.php
 
-/目录遍历>
 目录遍历,vul/dir/dir_list.php
-
-/敏感信息泄露>
-敏感信息,vul/infoleak/findabc.php
-
-/PHP反序列化
-php反序列化,vul/unserilization/unser.php
-
-/XXE
-xxe,vul/xxe/xxe_1.php
-
 /URL重定向
 不安全的url跳转,vul/urlredirect/urlredirect.php
 
